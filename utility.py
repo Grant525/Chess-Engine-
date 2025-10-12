@@ -59,3 +59,12 @@ def is_legal(board, move):
         if in_check(apply_move(board, move), board, color):
               return False 
         return True
+
+
+
+def opponent_color(color):
+    if color == "white":
+        return "black" 
+    if color == "black":
+        return "white"
+

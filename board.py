@@ -27,8 +27,9 @@ class Board:
                 board[7][a] = p.Bishop(color = "black", position = (7, a), id = 3 if a == 2 else 4)
         board[0][3] = p.Queen(color = "white", position = (0, 3), id = 1)
         board[7][3] = p.Queen(color = "black", position = (7, 3), id = 2)
-        board[1][4] = p.King(color = "white", position = (0, 4), id = 1) 
+        board[0][4] = p.King(color = "white", position = (0, 4), id = 1) 
         board[7][4] = p.King(color = "black", position = (7, 4), id = 2)
+        
 
   
     
@@ -36,5 +37,5 @@ class Board:
 
       
                    
-                            
+
                 

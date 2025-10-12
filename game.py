@@ -16,7 +16,7 @@ class Player:
         board[end_c][end_r] = board[c][r]
         board[c][r].position = (end_c, end_r)
         board[c][r] = " "
-        if u.is_legal(board,move):
+        if u.is_legal(board.move):
             return board
 
     def capture(self, board, position):
@@ -25,7 +25,9 @@ class Player:
         self.pieces_taken.append(board[c][r])
 
     def evaluate(board):
-        
+        ...
+             
+
     
    
     
@@ -34,4 +36,4 @@ class Player:
     #maybe just make 2 players using Player class
 
     #need a oposing move function that can predict responses in order to look further down the tree 
-    #instead I could use another engine to do the rsponse moves which I then send back to the tree to keep exploring 
+    #instead I could use another engine to do the response moves which I then send back to the tree to keep exploring

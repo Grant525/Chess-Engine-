@@ -1,0 +1,25 @@
+# def alpha_prune(board, turn, color, depth, alpha, beta):    
+#         if depth == 0 or is_leaf_node():
+#             return g.evaluate(board)
+#         if turn == True:
+#             max_eval = float("-inf")
+#             for move in best_moves(board, color):   
+#                 if 
+#                 new_board = u.apply_move(board, move[2], move[3])
+#                 eval = alpha_prune(new_board, False, color, depth - 1, alpha, beta)
+#                 max_eval = max(max_eval, eval)
+#                 alpha = max(alpha, eval)
+#                 if beta <= alpha:
+#                     break
+#             return max_eval
+#         if turn == False:
+#             min_eval = float("inf")
+#             for move in u.possible_moves(board, u.opponent_color(color)): #terrible system for color lol
+#                 new_board = u.apply_move(board, move[2], move[3])
+#                 eval = alpha_prune(new_board, True, u.opponent_color(color), depth - 1, alpha, beta)
+#                 min_eval = min(min_eval, eval)
+#                 beta = min(beta, eval)
+#                 if beta <= alpha:
+#                         break
+#             return min_eval
+            

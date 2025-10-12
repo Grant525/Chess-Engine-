@@ -23,51 +23,49 @@ def evaluate(board,color):
 
 
 
-def total_pieces(board,color):
+def total_pieces(board,color: str):
     piece_count = 0
     for x in range(8):
         for y in range(8):
-            if board[x][y].color == color:
-                piece_count+=1
+            if not u.empty(board,x,y):
+                if board[x][y].color == color:
+                    piece_count+=1 
     return piece_count
 
 def total_piece_value(board, color):
     total_value = 0
     for x in range(8):
-        for y in range(8):
-            if board[x][y].color == color:
-                total_value+=board[x][y].value
+        for y in range(8): 
+            if not u.empty(board,x,y):
+                if board[x][y].color == color: 
+                    total_value+=board[x][y].value
+                    print(board[x][y].name)
     return total_value
 
 def opponent_piece_value(board,color):
     total_value = 0
-    for x in range(8):
+    for x in range(8): 
         for y in range(8):
-            if board[x][y].color != color:
-                total_value+=board[x][y].value
+            if not u.empty(board, x,y):
+                if board[x][y].color != color:
+                    total_value+=board[x][y].value
     return total_value
 
 def value_difference(board, color):
     total_piece_value(board,color) - opponent_piece_value(board,color)
 
-def protected(board,color,position):
+def is_protected(board,color,position):
     for move in u.possible_moves(board,color):
         if move[3] == position:
             return True 
     return False 
     
-def under_attack(board,color,position):
-    for move in u.possible_moves(board, opponent_color(color)): #Opponents moves 
+def is_under_attack(board,color,position):
+    for move in u.possible_moves(board, u.opponent_color(color)): #Opponents moves 
         if move[3] == position:
             return True 
     return False 
     
-def opponent_color(color):
-    if color == "white":
-        return "black" 
-    if color == "black":
-        return "white"
-
 
     
 

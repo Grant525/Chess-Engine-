@@ -1,7 +1,7 @@
 import utility as u
 
 class Pawn:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int], id = None):
         self.name = "Pawn"
         self.color = color    
         self.value = 1
@@ -27,11 +27,12 @@ class Pawn:
 
 
 class Rook:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int],id = None):
         self.name = "Rook"
         self.color = color
         self.value = 5
         self.position = position
+        self.id = id
 
     def move(self, new_position: tuple[int, int]):
         
@@ -59,11 +60,12 @@ class Rook:
         return possible_moves
         
 class Knight:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int],id = None):
         self.name = "Knight"
         self.color = color
         self.value = 3
         self.position = position
+        self.id = id
 
     def move(self, new_position: tuple[int, int]):
         # Implement knight-specific movement rules
@@ -90,11 +92,12 @@ class Knight:
 
 
 class Bishop:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int],id = None):
         self.name = "Bishop"
         self.color = color
         self.value = 3
         self.position = position
+        self.id = id
 
     def move(self, new_position: tuple[int, int]):
         # Implement bishop-specific movement rules
@@ -121,11 +124,12 @@ class Bishop:
         return possible_moves 
 
 class Queen:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int],id = None):
         self.name = "Queen"
         self.color = color
         self.value = 9
         self.position = position
+        self.id = id
 
     def move(self, new_position: tuple[int, int]):
         # Implement queen-specific movement rules
@@ -152,11 +156,12 @@ class Queen:
         return possible_moves 
 
 class King:
-    def __init__(self, color: str, position: tuple[int, int]):
+    def __init__(self, color: str, position: tuple[int, int], id = None):
         self.name = "King"
         self.color = color
-        self.value = float('inf') #variable, has worth in end game 
+        self.value = 0 #variable, has worth in end game 
         self.position = position
+        self.id = id
 
     def move(self, new_position: tuple[int, int]):
         # Implement king-specific movement rules

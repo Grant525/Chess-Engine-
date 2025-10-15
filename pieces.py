@@ -47,16 +47,11 @@ class Rook:
         color = self.color
         for x, y in directions:
             new_c, new_r = c + x, r + y
-            while u.in_bounds(new_c, new_r):
+            if u.in_bounds(new_c, new_r):
                 if u.empty(board, new_c, new_r):
                     possible_moves.append(("Rook", id, (c, r), (new_c, new_r)))
                 elif u.different_color(board, new_c, new_r, color):
                     possible_moves.append(("Rook", id, (c, r), (new_c, new_r)))
-                    break
-                else: 
-                    break
-                new_c += x
-                new_r += y
         return possible_moves
         
 class Knight:
@@ -79,15 +74,12 @@ class Knight:
         color = self.color
         for x, y in directions:
             new_c, new_r = c + x, r + y
-            while u.in_bounds(new_c, new_r):
+            if u.in_bounds(new_c, new_r):
                 if u.empty(board, new_c, new_r):
                     possible_moves.append(("Knight",id,(c, r), (new_c, new_r)))
-                    break
                 elif u.different_color(board, new_c, new_r, color):
                     possible_moves.append(("Knight",id, (c, r), (new_c, new_r)))
-                    break
-                else: 
-                    break
+            else: return None
         return possible_moves 
 
 
@@ -111,16 +103,13 @@ class Bishop:
         color = self.color
         for x, y in directions:
             new_c, new_r = c + x, r + y
-            while u.in_bounds(new_c, new_r):
+            if u.in_bounds(new_c, new_r):
                 if u.empty(board, new_c, new_r):
                     possible_moves.append(("Bishop",id,(c, r), (new_c, new_r)))
                 elif u.different_color(board, new_c, new_r, color):
                     possible_moves.append(("Bishop",id, (c, r), (new_c, new_r)))
-                    break
-                else: 
-                    break
-                new_c += x
-                new_r += y
+            else: return None
+        
         return possible_moves 
 
 class Queen:
@@ -151,8 +140,6 @@ class Queen:
                     break
                 else: 
                     break
-                new_c += x
-                new_r += y
         return possible_moves 
 
 class King:
@@ -175,15 +162,13 @@ class King:
         color = self.color
         for x, y in directions:
             new_c, new_r = c + x, r + y
-            while u.in_bounds(new_c, new_r):
+            if u.in_bounds(new_c, new_r):
                 if u.empty(board, new_c, new_r):
                     possible_moves.append(("King", id,(c, r),(new_c, new_r)))
                     break
                 elif u.different_color(board, new_c, new_r, color):
                     possible_moves.append(("King", id,(c, r),(new_c, new_r)))
-                    break
-                else: 
-                    break
+                else: return None
         return possible_moves
     
     

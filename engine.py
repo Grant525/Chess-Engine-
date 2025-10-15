@@ -15,7 +15,7 @@ def evaluate(board,color):
 #King Saftey 
 #Pawn Structure 
 #Piece development 
-#Trade offs (ex: knight and bishops > rook and awn )
+#Trade offs (ex: knight and bishops > rook and pawn )
 
 #can make value any value as long as the proportions stay the same 
 #can evaluate pieces seperatly 

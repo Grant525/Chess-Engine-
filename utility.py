@@ -55,7 +55,7 @@ def possible_moves(board, color):
         return possible_moves
 
 
-def is_legal(board, move):
+def is_legal(board, move, color): #could also error check a moves against possible moves 
         if in_check(apply_move(board, move), board, color):
               return False 
         return True
@@ -68,3 +68,12 @@ def opponent_color(color):
     if color == "black":
         return "white"
 
+def apply_move_t(board,(name,id,(c,r),(new_c,new_r))):
+(board, start_pos, end_pos):
+        new_board = [row[:] for row in board]
+        c, r = start_pos
+        end_c, end_r = end_pos
+        new_board[end_c][end_r] = board[c][r]
+        new_board[c][r].position = (end_c, end_r)
+        new_board[c][r] = " "
+        return new_board
